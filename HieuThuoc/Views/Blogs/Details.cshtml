@@ -1,0 +1,48 @@
+﻿@model HieuThuoc.Models.Blog
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-center"> <FONT color="#FF000">CHI TIẾT BLOGS</FONT></h2>
+
+
+<!-------------------------------->
+<table class="table">
+    <tr>
+        <td rowspan="4" width="10%">
+
+            <img width="300" height="300" src="~/img/Item/@Html.DisplayFor(model => model.Picture)">
+            <br />
+
+        </td>
+        <th> Tiêu đề</th>
+        <td> @Html.DisplayFor(model => model.Title)</td>
+    </tr>
+    <tr>
+        <th>  Ngày Đăng</th>
+        <td>      @Html.DisplayFor(model => model.DateImport)</td>
+
+    </tr>
+
+
+    <tr>
+        <th>   Mô tả</th>
+        <td>      @Html.DisplayFor(model => model.Describe)</td>
+
+    </tr>
+    <tr>
+        <th>  Chi tiết</th>
+        <td>      @Html.DisplayFor(model => model.ShortTitle)</td>
+
+    </tr>
+    <tr>
+
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<div class="form-group">
+    <a href="/blogs" class="btn btn-primary">Quay lại</a>
+</div>

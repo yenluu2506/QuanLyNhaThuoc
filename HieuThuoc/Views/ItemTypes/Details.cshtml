@@ -1,0 +1,31 @@
+﻿@model HieuThuoc.Models.ItemType
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-center"> <FONT color="#FF000">CHI TIẾT</FONT></h2>
+
+
+<!-------------------------------->
+<table table class="table table-hover display" style="width: 100%;color:black;">
+    <tr>
+        <th> Tên</th>
+        <td> @Html.DisplayFor(model => model.TypeName)</td>
+    </tr>
+    <tr>
+        <th>  Loại</th>
+        <td>      @Html.DisplayFor(model => model.Menu.Name)</td>
+
+    </tr>
+
+    <tr>
+
+        <td></td>
+        <td></td>
+    </tr>
+</table>
+<div class="form-group">
+    <a href="/itemtypes" class="btn btn-primary">Quay lại</a>
+</div>

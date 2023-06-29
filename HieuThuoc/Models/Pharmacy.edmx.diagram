@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="e0d375d3a8d847ccbec982a6e1038d13" Name="Diagram1" ZoomLevel="64">
+        <EntityTypeShape EntityType="PharmacyModel.About" Width="1.5" PointX="9.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Admin" Width="1.5" PointX="9.75" PointY="8.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Banner" Width="1.5" PointX="9.75" PointY="11.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Blog" Width="1.5" PointX="11.75" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Brand" Width="1.5" PointX="3" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Contact" Width="1.5" PointX="11.75" PointY="7.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Customer" Width="1.5" PointX="3" PointY="10" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Feedback" Width="1.5" PointX="5.25" PointY="14.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Footer" Width="1.5" PointX="7.75" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.FooterDetail" Width="1.5" PointX="10" PointY="1.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Item" Width="1.5" PointX="5.25" PointY="3.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.ItemType" Width="1.5" PointX="3" PointY="5.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Menu" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Order" Width="1.5" PointX="5.25" PointY="9.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.OrderDetail" Width="1.5" PointX="7.5" PointY="4.375" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Payment" Width="1.5" PointX="7.5" PointY="10.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.ReplyFeedback" Width="1.5" PointX="7.5" PointY="14" IsExpanded="true" />
+        <EntityTypeShape EntityType="PharmacyModel.Store" Width="1.5" PointX="3" PointY="0.75" IsExpanded="true" />
+        <AssociationConnector Association="PharmacyModel.FK__Brand__MenuID__47DBAE45" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Item__BrandID__48CFD27E" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Feedback__Custom__5070F446" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Order__CustomerI__4CA06362" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__ReplyFeed__Custo__5165187F" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__ReplyFeed__FeedB__52593CB8" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__FooterDet__Foote__534D60F1" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Item__StoreID__4AB81AF0" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Item__TypeID__49C3F6B7" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__OrderDeta__ItemI__4D94879B" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__ItemType__MenuID__4BAC3F29" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__OrderDeta__Order__4E88ABD4" ManuallyRouted="false" />
+        <AssociationConnector Association="PharmacyModel.FK__Payment__OrderID__4F7CD00D" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

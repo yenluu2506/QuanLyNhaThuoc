@@ -1,0 +1,132 @@
+﻿
+@model IEnumerable<HieuThuoc.Models.Item>
+
+@{
+	ViewBag.Title = "Index";
+	Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+
+<div class="card shadow mb-4">
+    <div class="card-header py-3">
+        <h2 style="text-align: center"><FONT color="#FF000">DANH SÁCH SẢN PHẨM</FONT></h2>
+        <div class="form-group">
+            <a href="/items/create" class="btn btn-primary">Thêm mới</a>
+        </div>
+    </div>
+    <div class="card-body">
+        <div class="table-responsive">
+            <table class="table table-hover display" id="dataTable" width="150%" cellspacing="0">
+                <thead>
+                    <tr>
+                        <th>
+                            Ảnh
+                        </th>
+                        <th>Tên</th>
+
+
+                        <th>
+                            Giá Bán
+                        </th>
+                        <th>
+                            Ngày Nhập
+                        </th>
+                        <th>
+                            Ngày Sản xuất
+                        </th>
+                        <th>
+                            Hạn sử dụng
+                        </th>
+                        <th>
+                            Số Lượng
+                        </th>
+                        <th>
+                            Kho
+                        </th>
+                        <th>
+                            Xuất xứ
+                        </th>
+                        <th>
+                            Loại
+                        </th>
+                        <th>
+                            Trạng thái
+                        </th>
+                        @*<th>
+            Status
+        </th>*@
+                        <th></th>
+                    </tr>
+                </thead>
+                <tbody>
+                    @foreach (var item in Model)
+                    {
+                        <tr>
+                            <td>
+                                <img width="100" height="100" src="~/img/Item/@Html.DisplayFor(modelItem => item.Picture)" />
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Name)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.SellPrice)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateImport)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateOfManu)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.DateOfExpried)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Quantity)
+                            </td>
+
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Store.Name)
+                            </td>
+
+                            <td>
+                                @Html.DisplayFor(modelItem => item.Brand.Name)
+                            </td>
+                            <td>
+                                @Html.DisplayFor(modelItem => item.ItemType.TypeName)
+                            </td>
+                            <td>
+                                @if (item.Quantity == 0)
+                                {
+
+                                    <p style="color:#eb560b">Hết hàng</p>
+                                }
+                                else
+                                {
+                                    <p style="color:#10de34">Còn hàng</p>
+                                }
+
+                            </td>
+                            @*<td>
+        @if (item.Active == true)
+        {
+            <p style="color:#10de34">Active</p>
+        }
+        else {
+            <p style="color:#eb560b">Unactive</p>
+        }
+        </td>*@
+                            <td>
+                                @Html.ActionLink(" ", "Edit", new { id = item.ID }, new { @class = "far fa-edit btn btn-outline-success" })
+
+                                @Html.ActionLink("Details", "Details", new { id = item.ID }, new { @class = "btn btn-outline-success" })
+                                @Html.ActionLink(" ", "Delete", new { id = item.ID }, new { onclick = "return confirm('bạn muốn xóa?');", @class = "far fa-trash-alt btn btn-outline-success" })
+                            </td>
+                        </tr>
+                    }
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

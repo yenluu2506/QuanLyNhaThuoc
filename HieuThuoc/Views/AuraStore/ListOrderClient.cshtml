@@ -1,0 +1,118 @@
+﻿@model IEnumerable<HieuThuoc.Models.OrderEntity>
+
+@{
+    ViewBag.Title = "ListOrderClient";
+    Layout = "~/Views/Shared/_LayoutHomePage.cshtml";
+}
+<h2 style="margin-top: 50px; text-align: center">Lịch sử đơn hàng của bạn</h2>
+<div style="padding: 15px">
+    <table class="table">
+        <tr>
+            <th>
+                Ngày đặt hàng
+            </th>
+            <th>
+                Ngày giao hàng
+            </th>
+            <th>
+                Trạng thái
+            </th>
+            <th>
+                Duyệt
+            </th>
+            <th>
+                Tên
+            </th>
+            <th>
+                Địa chỉ
+            </th>
+            <th>
+                Email
+            </th>
+            <th>
+                Ghi Chú
+            </th>
+            <th></th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Orderdate)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Deliverydate)
+                </td>
+
+                <td>
+                    @if (item.Status == true)
+                    {
+                        <p>Đã duyệt</p>
+                    }
+                    else
+                    {
+                        <p>Chưa duyệt</p>
+                    }
+                </td>
+                <td>
+                    @if (item.Process == true)
+                    {
+                        <p>Đã Duyệt</p>
+                    }
+                    else if (item.Status == true || item.Process == false)
+                    {
+                        <p>Hủy Đơn</p>
+                    }
+                    else if (item.Status == false)
+                    {
+                        <p>Chưa duyệt</p>
+                    }
+
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.Address)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Customer.EmailAddress)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Note)
+                </td>
+                @if (item.Status == false)
+                {
+                    <td>	@Html.ActionLink("Hủy", "CancelOrder", new { id = item.ID }, new { onclick = "return confirm('Bạn chắc chắn muốn hủy đơn hàng ?');" })</td>
+                }
+
+                <td>
+
+
+
+                    <button type="button" class="pest_btn" data-toggle="collapse" data-target="#@item.ID" aria-expanded="false" data-parent="#myaccordion">
+
+                        Chi tiết
+                    </button>
+
+
+                </td>
+            </tr>
+            <tr>
+
+                <td colspan="5">
+
+                    <div class="card-body collapse hile" data-toggle="collapse" aria-expanded="false" id="@item.ID">
+                        @Html.Action("ListOrderDetailClient", "AuraStore", new { id = item.ID })
+                    </div>
+                </td>
+            </tr>
+
+        }
+
+    </table>
+</div>
+
+
+

@@ -1,0 +1,57 @@
+﻿@model HieuThuoc.Models.Blog
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align: center"><FONT color="#FF000">XÓA TIN TỨC</FONT></h2>
+<br />
+<br />
+<h3>Bạn chắc chắn muốn xóa không?</h3>
+
+<div>
+    <!-------------------------------->
+    <table table class="table table-hover display" style="width: 100%;color:black;">
+        <tr>
+            <th> Ảnh</th>
+            <td>  @Html.DisplayFor(model => model.Picture)</td>
+        </tr>
+        <tr>
+            <th>  Tiêu Đề</th>
+            <td>       @Html.DisplayFor(model => model.Title)</td>
+
+        </tr>
+        <tr>
+            <th>  Ngày Đăng</th>
+            <td>       @Html.DisplayFor(model => model.DateImport)</td>
+
+        </tr>
+        <tr>
+            <th>  Chi tiết</th>
+            <td>       @Html.DisplayFor(model => model.ShortTitle)</td>
+
+        </tr>
+        <tr>
+            <th>  Mô tả</th>
+            <td>       @Html.DisplayFor(model => model.Describe)</td>
+
+        </tr>
+
+        <tr>
+
+            <td></td>
+            <td></td>
+        </tr>
+    </table>
+
+        @using (Html.BeginForm())
+        {
+            @Html.AntiForgeryToken()
+
+            <div class="form-group">
+                <a href="/blogs" class="btn btn-primary">Quay lại</a>
+                <button type="submit" class="btn btn-danger">Xóa</button>
+            </div>
+        }
+</div>

@@ -1,0 +1,87 @@
+﻿@model HieuThuoc.Models.Item
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 class="text-center"> <FONT color="#FF000">XÓA THUỐC</FONT></h2>
+<br />
+<br />
+<h3>Bạn chắc chắn muốn xóa không?</h3>
+
+<!-------------------------------->
+<table class="table">
+    <tr>
+        <td rowspan="9" width="30%">
+
+            <img width="300" height="300" src="~/img/Item/@Html.DisplayFor(model => model.Picture)">
+            <br />
+
+        </td>
+        <th> @Html.DisplayNameFor(model => model.Name)</th>
+        <td> @Html.DisplayFor(model => model.Name)</td>
+    </tr>
+    <tr>
+        <th>  @Html.DisplayNameFor(model => model.PurcharsePrice)</th>
+        <td>      @Html.DisplayFor(model => model.PurcharsePrice)</td>
+
+    </tr>
+
+
+    <tr>
+        <th>    @Html.DisplayNameFor(model => model.SellPrice)</th>
+        <td>      @Html.DisplayFor(model => model.SellPrice)</td>
+
+    </tr>
+    <tr>
+        <th>  @Html.DisplayNameFor(model => model.Quantity)</th>
+        <td>      @Html.DisplayFor(model => model.Quantity)</td>
+
+    </tr>
+    <tr>
+        <th>  @Html.DisplayNameFor(model => model.DateImport)</th>
+        <td>      @Html.DisplayFor(model => model.DateImport)</td>
+
+    </tr>
+    <tr>
+        <th>  Store</th>
+        <td>      @Html.DisplayFor(model => model.Store.Name)</td>
+
+    </tr>
+    <tr>
+        <th>  Brand</th>
+        <td>      @Html.DisplayFor(model => model.Brand.Name)</td>
+
+    </tr>
+    <tr>
+        <th>  Type</th>
+        <td>      @Html.DisplayFor(model => model.ItemType.TypeName)</td>
+
+    </tr>
+    <tr>
+        <th>  Describe</th>
+        <td>      @Html.DisplayFor(model => model.Describe)</td>
+
+    </tr>
+    <tr>
+
+        <td></td>
+
+        <td>
+            @using (Html.BeginForm())
+            {
+                @Html.AntiForgeryToken()
+
+                <div class="form-actions no-color">
+                    <input type="submit" value="Delete" class="btn btn-danger" />
+                    <a href="/items" class="btn btn-primary">Quay lại</a>
+                </div>
+            }
+        </td>
+
+        <td></td>
+    </tr>
+</table>
+
+

@@ -1,0 +1,66 @@
+﻿@model IEnumerable<HieuThuoc.Models.Customer>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_LayoutAdmin.cshtml";
+}
+
+<h2 style="text-align: center"><FONT color="#FF000">KHÁCH HÀNG</FONT></h2>
+
+<p>
+  
+</p>
+<table table class="table table-hover display">
+    <tr>
+        <th>
+            Tài Khoản
+        </th>
+        <th>
+           Mật Khẩu
+        </th>
+        <th>
+            Họ Tên
+        </th>
+        
+        <th>
+            Địa Chỉ
+        </th>
+        <th>
+            Email
+        </th>
+        
+        <th>
+            Số Điện Thoại
+        </th>
+        
+      
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Passwords)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Name)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Address)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.EmailAddress)
+        </td>
+        
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+			
+        </td>
+        
+    </tr>
+}
+
+</table>
